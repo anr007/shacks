@@ -12,14 +12,14 @@ Explanation:
 * -p program (Shows Program Name/PID)
 * -n numeric (Ex: Shows localhost as 127.0.0.x)
 
-### Compress using tar
+### Archive using tar
 ```shell
 tar -czvf archive-name.tar.gz /path/to/directory-or-file-to-be-archived
 ```
 Explanation:
 * tar (**T**ape **AR**chiver)
 * -c create (archive)
-* -z gzip (use gzip compression algo.)
+* -z gzip (use gzip compression format)
 * -v verbose (list all files processed)
 * -f file archive (use file archive, tar can also write archives to tapes!)
 
