@@ -1,7 +1,7 @@
 # ShellHacks
 
 ### Show all active connections with their port information
-```shell
+```
 sudo netstat -tulpn
 ```
 Explanation:
@@ -13,7 +13,7 @@ Explanation:
 * -n numeric (Ex: Shows localhost as 127.0.0.x)
 
 ### Archive using tar
-```shell
+```
 tar -czvf archive-name.tar.gz /path/to/directory-or-file-to-be-archived
 ```
 Explanation:
@@ -23,14 +23,14 @@ Explanation:
 * -v verbose (list all files processed)
 * -f file archive (use file archive, tar can also write archives to tapes!)
 
-```shell
+```
 tar -czvf archive-name.tar.gz /path/to/input1 /path/to/input2 --exclude=path/to/unnecessary/files-or-dirs --exclude=regex 
 ```
 * regex can be like '*.sh' which will exclude all files ending with .sh
 * inputs can be files or directories or both 
 
 ### Extract using tar
-```shell
+```
 tar -xzvf archive-name.tar.gz
 ```
 Explanation:
@@ -40,5 +40,25 @@ Explanation:
 tar -xzvf archive-name.tar.gz -C /path/to/output-directory
 ``` 
 * -C change to directory
+
+### Split files using csplit
+```
+csplit input.txt --suppress-matched -k -z -f output -b '%02d.txt' '%.%' '/-*-/' '{*}'
+```
+Explanation:
+
+splits 'input.txt' repeatedly at lines matching pattern similar to '---------' represented by the regex '/-*-/' excluding the first line of input.txt and the lines matching pattern, rest are written to files named 'output01.txt', 'output02.txt' etc..
+
+* csplit - split a file into sections determined by context lines
+* '-' can be used to read from stdin
+* '/regex/[offset]' - outputs the contents to a file till the line matching the pattern 
+* '%regex%[offset]' - ignore the line(s) matched by the pattern
+* '{repeat-count} - repeat the previous pattern repeat-count additional times
+* --suppress-matched do not output lines matching the specified pattern
+* -k do not remove already generated output files when errors are occur in the process
+* -z suppress zero-length output files
+* -f prefix of output
+* -b suffix format of output
+
 
 
