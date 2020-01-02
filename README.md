@@ -60,5 +60,24 @@ splits 'input.txt' repeatedly at lines matching pattern similar to '---------' r
 * -f prefix of output
 * -b suffix format of output
 
+### Pull data from remote
+``` 
+scp -i key.pem -P 22 remote-user@remote-address:/full/path/to/remote/file /local/path/to/save/file
+```
+``` 
+scp -i key.pem -P 22 -r remote-user@remote-address:/full/path/to/remote/dir /local/path/to/save/dir
+```
+* scp - secure copy (remote file copy program)
+* -i identity_file (directly passed to ssh)
+* -r recursively copy entire directories (follows sym links encountered)
+* -P port (specifies the port to connect to on the remote host)
+
+### Push data to remote
+```
+scp -i key.pem /path/to/local/file remote-user@remote-address:/full/remote/path/to/save/file
+```
+```
+scp -i key.pem -r /path/to/local/dir remote-user@remote-address:/full/remote/path/to/save/dir
+```
 
 
