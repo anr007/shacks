@@ -60,7 +60,7 @@ splits 'input.txt' repeatedly at lines matching pattern similar to '---------' r
 * -f prefix of output
 * -b suffix format of output
 
-### Pull data from remote
+### Pull data from remote using SCP
 ``` 
 scp -i key.pem -P 22 remote-user@remote-address:/full/path/to/remote/file /local/path/to/save/file
 ```
@@ -72,7 +72,7 @@ scp -i key.pem -P 22 -r remote-user@remote-address:/full/path/to/remote/dir /loc
 * -r recursively copy entire directories (follows sym links encountered)
 * -P port (specifies the port to connect to on the remote host)
 
-### Push data to remote
+### Push data to remote using SCP
 ```
 scp -i key.pem /path/to/local/file remote-user@remote-address:/full/remote/path/to/save/file
 ```
@@ -80,4 +80,15 @@ scp -i key.pem /path/to/local/file remote-user@remote-address:/full/remote/path/
 scp -i key.pem -r /path/to/local/dir remote-user@remote-address:/full/remote/path/to/save/dir
 ```
 
+### One-line info of any bash utility
+```
+whatis utility_name
+```
+* whatis - display one-line manual page descriptions
 
+### Create files of specific size
+```
+truncate -s 101M target_file
+```
+* truncate - shrink or extend the size of a file to the specified size
+* -s set or adjust the file size by SIZE bytes (K,M,G,T,P,E,Z,Y etc.. units can be used to override)
