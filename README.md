@@ -99,3 +99,20 @@ head -c SIZE /dev/urandom > target_file
 * -c print the first SIZE bytes of each file (K,M,G,T or KB,MB,GB,TB etc.. units can be used to override)
 * \> redirect stdout to target_file
 
+### Pull data from remote using rsync
+```
+rsync -e "ssh -i key.pem" -Pzavh remote-user@remote-address:/full/path/to/remote/file/or/dir /local/path/to/save/file/or/dir
+```
+* rsync - a fast, versatile, remote (and local) file-copying tool
+* -e specify command for remote shell to use
+* -P show progress, keep partially transferred files 
+* -z compress file data during the transfer
+* -a archive mode, equals -rlptgoD
+* -v verbose
+* -h output numbers in a human-readable format
+
+### Push data to remote using rsync
+```
+rsync -e "ssh -i key.pem" -Pzavh /local/path/to/save/file/or/dir remote-user@remote-address:/full/remote/path/to/save/file/or/dir
+```
+
