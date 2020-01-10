@@ -88,7 +88,14 @@ whatis utility_name
 
 ### Create files of specific size
 ```
-truncate -s 101M target_file
+truncate -s SIZE target_file
 ```
 * truncate - shrink or extend the size of a file to the specified size
-* -s set or adjust the file size by SIZE bytes (K,M,G,T,P,E,Z,Y etc.. units can be used to override)
+* -s set or adjust the file size by SIZE bytes (K,M,G,T or KB,MB,GB,TB etc.. units can be used to override)
+```
+head -c SIZE /dev/urandom > target_file
+```
+* head - output the first part of files
+* -c print the first SIZE bytes of each file (K,M,G,T or KB,MB,GB,TB etc.. units can be used to override)
+* \> redirect stdout to target_file
+
