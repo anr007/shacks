@@ -29,7 +29,7 @@ tar -czvf archive-name.tar.gz /path/to/input1 /path/to/input2 --exclude=path/to/
 * regex can be like '*.sh' which will exclude all files ending with .sh
 * inputs can be files or directories or both 
 
-### Extract using tar
+### Extract tarballs using tar
 ```
 tar -xzvf archive-name.tar.gz
 ```
@@ -40,6 +40,24 @@ Explanation:
 tar -xzvf archive-name.tar.gz -C /path/to/output-directory
 ``` 
 * -C change to directory
+
+### Split files using split
+```
+split -b SIZE -d -a NUM input_file output_chunks_prefix
+```
+* split - split a file into pieces
+* -b put SIZE bytes per output file
+* -d use numeric suffixes starting at 0, not alphabetic
+* -a generate suffixes of length NUM (default 2)
+```
+split -n N -de -a NUM input_file output_chunks_prefix
+```
+* -n generate N chunks output files based on input file size
+* -e do not generate empty output files with '-n'
+```
+split -l N -d -a NUM input_file output_chunks_prefix
+```
+* -l put N lines/records per output file
 
 ### Split files using csplit
 ```
@@ -60,7 +78,21 @@ splits 'input.txt' repeatedly at lines matching pattern similar to '---------' r
 * -f prefix of output
 * -b suffix format of output
 
-### Pull data from remote using SCP
+### Merge files using cat
+```
+cat f1 f2 > merged_file
+```
+* cat - concatenate files and print on the standard output
+* \> redirect stdout to target_file
+```
+cat f?? > merged_file
+```
+* f?? - matches file names having any two characters starting with f like f01,fab,fa1 etc..
+```
+cat f* > merged_file
+```
+
+### Pull data from remote using scp
 ``` 
 scp -i key.pem -P 22 remote-user@remote-address:/full/path/to/remote/file /local/path/to/save/file
 ```
@@ -72,7 +104,7 @@ scp -i key.pem -P 22 -r remote-user@remote-address:/full/path/to/remote/dir /loc
 * -r recursively copy entire directories (follows sym links encountered)
 * -P port (specifies the port to connect to on the remote host)
 
-### Push data to remote using SCP
+### Push data to remote using scp
 ```
 scp -i key.pem /path/to/local/file remote-user@remote-address:/full/remote/path/to/save/file
 ```
