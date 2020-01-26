@@ -41,6 +41,13 @@ tar -xzvf archive-name.tar.gz -C /path/to/output-directory
 ``` 
 * -C change to directory
 
+### Peek contents of tarballs
+```
+tar -tvzf archive-name.tar.gz
+```
+Explanation:
+* -t list the contents of an archive
+
 ### Split files using split
 ```
 split -b SIZE -d -a NUM input_file output_chunks_prefix
