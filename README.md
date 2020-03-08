@@ -154,4 +154,15 @@ rsync -e "ssh -i key.pem" -Pzavh remote-user@remote-address:/full/path/to/remote
 ```
 rsync -e "ssh -i key.pem" -Pzavh /local/path/to/save/file/or/dir remote-user@remote-address:/full/remote/path/to/save/file/or/dir
 ```
-
+### Search for files/directories
+```
+find -L /path/to/search -maxdepth 5 -type f -iname "*.pdf" -mtime -7 -size +25k -ls
+```
+* find - search for files in a directory hierarchy
+* -L Follow symbolic links
+* -maxdepth Descend at most levels (a non-negative integer) levels of directories below the starting-points
+* -type **f** for regular file, **d** for directory, **s** for socket
+* -iname Base of file name, the match is case insensitive
+* -mtime File's data was last modified **n*24** hours ago (+n for greater than n, -n for less than n, n for exactly n)
+* -size File uses n units of space, rounding up (k for for kibibytes[KiB], M for mebibytes[MiB], G for gibibytes[GiB])
+* -ls if matches, list current file in **ls -dils** format on standard output
