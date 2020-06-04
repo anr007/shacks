@@ -166,3 +166,11 @@ find -L /path/to/search -maxdepth 5 -type f -iname "*.pdf" -mtime -7 -size +25k 
 * -mtime File's data was last modified **n*24** hours ago (+n for greater than n, -n for less than n, n for exactly n)
 * -size File uses n units of space, rounding up (k for for kibibytes[KiB], M for mebibytes[MiB], G for gibibytes[GiB])
 * -ls if matches, list current file in **ls -dils** format on standard output
+
+### Execute any command with stdin as input
+```
+ls *.txt | xargs -d "\n" -t tar -cvzf text_files.tar.gz
+```
+* xargs - build and execute command lines from standard input (default command is  */bin/echo*)
+* -d delim Input items are terminated by the specified character
+* -t Print the command line on the standard error output before executing it
