@@ -12,7 +12,11 @@ sudo docker exec -it <container-id/name> bash
 cat nexus-data/admin.password
 ```
 
-### Create a docker repo in nexus and configure it using nexus ui
+### Create a docker repo using Nexus UI
+```
+- Select Repo as Docker Hosted
+- Add a port for insecure http connections to allow docker cli login
+```
 
 ### To allow insecure repos
 ```
@@ -26,11 +30,13 @@ nano daemon.json
 
 ### All running containers will be terminated after the following command run
 ```
-sudo docker service restart 
+sudo service docker restart 
 ```
 ### To allow local auth via cli
+```
 - Enable the Docker Bearer Token Realm in Nexus Security->Realms Tab
-### To fix error storing credentials problem 
+```
+### To fix error storing credentials problem (Optional)
 ```
 sudo apt autoremove  golang-docker-credential-helpers
 ```
