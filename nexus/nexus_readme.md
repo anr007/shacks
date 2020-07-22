@@ -1,7 +1,14 @@
-### To run
+### To Run
+- Docker Compose
 ```
 sudo docker-compose up -d
 ```
+- Docker
+```
+sudo docker run -it --name=nexus -p 8081:8081 -p 8123:8123 -p 8125:8125  --user=root -v /home/ubuntu/nexus_home:/nexus-data sonatype/nexus3:latest
+*Additional port (8125) for repo http endpoint
+```
+
 ### To check its running
 ```
 sudo docker-compose logs | grep started
