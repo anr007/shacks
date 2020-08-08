@@ -180,6 +180,7 @@ ls *.txt | xargs -d "\n" -t tar -cvzf text_files.tar.gz
 lastb user_name
 ```
 * lastb - shows a log of the /var/log/btmp file, which contains all the bad login attempts
+* login attempts can be verified [here](https://blackhat.directory)
 
 ### Show currently logged in users
 ```
