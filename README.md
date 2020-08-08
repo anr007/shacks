@@ -174,3 +174,15 @@ ls *.txt | xargs -d "\n" -t tar -cvzf text_files.tar.gz
 * xargs - build and execute command lines from standard input (default command is  */bin/echo*)
 * -d delim Input items are terminated by the specified character
 * -t Print the command line on the standard error output before executing it
+
+### View bad login attempts
+```
+lastb user_name
+```
+* lastb - shows a log of the /var/log/btmp file, which contains all the bad login attempts
+
+### Show currently logged in users
+```
+w
+```
+* w - Show who is logged on and what they are doing
