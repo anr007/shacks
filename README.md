@@ -187,3 +187,25 @@ lastb user_name
 w
 ```
 * w - Show who is logged on and what they are doing
+
+### Kill 
+```
+kill -s Signal PID
+```
+* kill - send a signal to a process
+* -s signal or value
+* Use **man 7 signal** for indepth info
+* The signals SIGKILL and SIGSTOP cannot be caught, blocked, or ignored.
+
+| Signal  | Value | Action      | Comment                                                |
+|---------|-------|-------------|--------------------------------------------------------|
+| SIGTERM | 15    | Termination | Graceful, Default                                      |
+| SIGKILL | 9     | Termination | Forceful                                               |
+| SIGINT  | 2     | Termination | Interrupt from keyboard, 'Ctrl + C'                    |
+| SIGHUP  | 1     | Termination | Hang UP, Terminal running the process disconnected     |
+| SIGQUIT | 3     | Termination | Quit from keyboard + Coredump, 'Ctrl + \\'             |
+| SIGTSTP | 20    | Stop        | Graceful, 'Ctrl + Z'                                   |
+| SIGSTOP | 19    | Stop        | Forceful                                               |
+| SIGCONT | 18    | Continue    | Continue if Stopped; else, Ignore                      |
+
+
