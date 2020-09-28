@@ -194,8 +194,8 @@ kill -s Signal PID
 ```
 * kill - send a signal to a process
 * -s signal or value
-* Use **man 7 signal** for indepth info
-* The signals SIGKILL and SIGSTOP cannot be caught, blocked, or ignored.
+* use **man 7 signal** for indepth info on all types of signals
+* the signals SIGKILL and SIGSTOP cannot be caught, blocked, or ignored
 
 | Signal  | Value | Action      | Comment                                                |
 |---------|-------|-------------|--------------------------------------------------------|
