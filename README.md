@@ -177,7 +177,7 @@ ls *.txt | xargs -d "\n" -t tar -cvzf text_files.tar.gz
 
 ### View bad login attempts
 ```
-lastb user_name
+lastb username
 ```
 * lastb - shows a log of the /var/log/btmp file, which contains all the bad login attempts
 * login attempts can be verified [here](https://blackhat.directory)
@@ -188,7 +188,7 @@ w
 ```
 * w - Show who is logged on and what they are doing
 
-### Kill 
+### Kill a process
 ```
 kill -s Signal PID
 ```
@@ -208,4 +208,14 @@ kill -s Signal PID
 | SIGSTOP | 19    | Stop        | Forceful                                               |
 | SIGCONT | 18    | Continue    | Continue if Stopped; else, Ignore                      |
 
-
+### Kill a task
+```
+killall -s Signal -v -y 10m process
+```
+* killall - kill processes by name
+* -s signal
+* -v report if the signal was successfully sent
+* -y kill processes younger than TIME (in s,m,h,d,w,M,y)
+* -o kill processes older than TIME (in s,m,h,d,w,M,y)
+* process name of the processes  
+* -l list all known signal names
