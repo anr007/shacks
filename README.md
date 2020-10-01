@@ -210,12 +210,28 @@ kill -s Signal PID
 
 ### Kill a task
 ```
-killall -s Signal -v -y 10m PNAME
+killall -s Signal -v -y 10m -u root PNAME
 ```
 * killall - kill processes by name
 * -s signal
 * -v report if the signal was successfully sent
 * -y kill processes younger than TIME (in s,m,h,d,w,M,y)
 * -o kill processes older than TIME (in s,m,h,d,w,M,y)
+* -u kill only process(es) running as USER
 * PNAME name of the processes to be signalled
 * -l list all known signal names
+
+```
+pkill -ce -SIGTERM -u root,daemon -n PATTERN
+```
+* pkill - look up or signal processes based on name and other attributes
+* -c count of matching processes
+* -e display what is killed
+* -SIGNAL
+* -n select most recently started (newest)
+* -o select least recently started (oldest)
+* -u match by USERS
+* PATTERN used for matching names of processes to be signalled
+* use **pgrep -a -u root PATTERN** to check processes matched by the pattern
+* -a list PID and full command line (pgrep only)
+* -l list PID and process name (pgrep only)
