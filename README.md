@@ -210,12 +210,12 @@ kill -s Signal PID
 
 ### Kill a task
 ```
-killall -s Signal -v -y 10m process
+killall -s Signal -v -y 10m PNAME
 ```
 * killall - kill processes by name
 * -s signal
 * -v report if the signal was successfully sent
 * -y kill processes younger than TIME (in s,m,h,d,w,M,y)
 * -o kill processes older than TIME (in s,m,h,d,w,M,y)
-* process name of the processes  
+* PNAME name of the processes to be signalled
 * -l list all known signal names
