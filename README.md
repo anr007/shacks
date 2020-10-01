@@ -232,6 +232,6 @@ pkill -ce -SIGTERM -u root,daemon -n PATTERN
 * -o select least recently started (oldest)
 * -u match by USERS
 * PATTERN used for matching names of processes to be signalled
-* use **pgrep -a -u root PATTERN** to check processes matched by the pattern
+* use `pgrep -a -u root PATTERN` to check processes matched by the pattern
 * -a list PID and full command line (pgrep only)
 * -l list PID and process name (pgrep only)
