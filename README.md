@@ -235,3 +235,18 @@ pkill -ce -SIGTERM -u root,daemon -n PATTERN
 * use `pgrep -a -u root PATTERN` to check processes matched by the pattern
 * -a list PID and full command line (pgrep only)
 * -l list PID and process name (pgrep only)
+
+### Find and Replace in files
+```
+SRC='Replace Me' \
+ TGT="I'm Replaced" \
+ grep -RiIl "$SRC" | xargs -rt sed -i "s#$SRC#$TGT#g"
+```
+* -R **grep:** Read all files under each directory, recursively.  Follow all symbolic links
+* -i **grep:** Ignore case distinctions, so that characters that differ only in case match each other
+* -I **grep:** Process a  binary  file  as  if  it  did  not  contain  matching  data
+* -l **grep:** Print the name of each matched input file
+* -r **xargs:** If  the  standard  input  does  not contain any nonblanks, do not run the command
+* -t **xargs:** Print the command line on the standard error output before executing it
+* -i **sed:** edit files in place
+* sed alternate delimiters: _ | # ; [space]
