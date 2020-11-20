@@ -53,7 +53,7 @@ Explanation:
 split -b SIZE -d -a NUM input_file output_chunks_prefix
 ```
 * split - split a file into pieces
-* -b put SIZE bytes per output file
+* -b put SIZE bytes per output file. Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)
 * -d use numeric suffixes starting at 0, not alphabetic
 * -a generate suffixes of length NUM (default 2)
 ```
