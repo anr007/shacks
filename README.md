@@ -24,8 +24,9 @@ Explanation:
 * -f file archive (use file archive, tar can also write archives to tapes!)
 
 ```
-tar -czvf archive-name.tar.gz /path/to/input1 /path/to/input2 --exclude=path/to/unnecessary/files-or-dirs --exclude=regex 
+tar --exclude=path/to/unnecessary/files-or-dirs --exclude=regex -czvf archive-name.tar.gz /path/to/input1 /path/to/input2  
 ```
+* path to exclude an entire directory must not end with a trailing **/**
 * regex can be like '*.sh' which will exclude all files ending with .sh
 * inputs can be files or directories or both 
 
