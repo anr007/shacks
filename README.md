@@ -259,3 +259,17 @@ time -p find -iname '*.sh'
 * time - run programs and summarize system resource usage
 * -p **time:** format output string for conformance with POSIX standard 1003.2
 * -iname **find:**  match is case insensitive
+
+### tempmark current dir
+```
+dirs -v
+```
+* dirs - display the list of currently remembered directories
+```
+pushd .
+```
+* pushd - stores the current directory for use by the popd command, and then changes to the specified directory.
+```
+popd
+```
+* popd - changes the current directory to the directory that was most recently stored by the pushd command.
