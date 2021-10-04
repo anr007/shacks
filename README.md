@@ -251,3 +251,11 @@ SRC='Replace Me' \
 * -t **xargs:** Print the command line on the standard error output before executing it
 * -i **sed:** edit files in place
 * sed alternate delimiters: _ | # ; [space]
+
+### time any command
+```
+time -p find -iname '*.sh'
+```
+* time - run programs and summarize system resource usage
+* -p **time:** format output string for conformance with POSIX standard 1003.2
+* -iname **find:**  match is case insensitive
