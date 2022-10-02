@@ -324,39 +324,39 @@ echo 'export KUBE_EDITOR="nano"' >> ~/.bashrc
 ```
 source ~/.bashrc
 ```
+
 ```
 . ~/.bashrc
 ```
 
 - source - Execute commands from a file in the current shell
-=======
-* -R **grep:** Read all files under each directory, recursively.  Follow all symbolic links
-* -i **grep:** Ignore case distinctions, so that characters that differ only in case match each other
-* -I **grep:** Process a  binary  file  as  if  it  did  not  contain  matching  data
-* -l **grep:** Print the name of each matched input file
-* -r **xargs:** If  the  standard  input  does  not contain any nonblanks, do not run the command
-* -t **xargs:** Print the command line on the standard error output before executing it
-* -i **sed:** edit files in place
-* sed alternate delimiters: _ | # ; [space]
 
 ### time any command
+
 ```
 time -p find -iname '*.sh'
 ```
-* time - run programs and summarize system resource usage
-* -p **time:** format output string for conformance with POSIX standard 1003.2
-* -iname **find:**  match is case insensitive
+
+- time - run programs and summarize system resource usage
+- -p **time:** format output string for conformance with POSIX standard 1003.2
+- -iname **find:** match is case insensitive
 
 ### tempmark current dir
+
 ```
 dirs -v
 ```
-* dirs - display the list of currently remembered directories
+
+- dirs - display the list of currently remembered directories
+
 ```
 pushd .
 ```
-* pushd - stores the current directory for use by the popd command, and then changes to the specified directory.
+
+- pushd - stores the current directory for use by the popd command, and then changes to the specified directory.
+
 ```
 popd
 ```
-* popd - changes the current directory to the directory that was most recently stored by the pushd command.
+
+- popd - changes the current directory to the directory that was most recently stored by the pushd command.
