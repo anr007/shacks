@@ -331,7 +331,7 @@ source ~/.bashrc
 
 - source - Execute commands from a file in the current shell
 
-### time any command
+### Time any command
 
 ```
 time -p find -iname '*.sh'
@@ -341,7 +341,7 @@ time -p find -iname '*.sh'
 - -p **time:** format output string for conformance with POSIX standard 1003.2
 - -iname **find:** match is case insensitive
 
-### tempmark current dir
+### Tempmark current dir
 
 ```
 dirs -v
@@ -360,3 +360,24 @@ popd
 ```
 
 - popd - changes the current directory to the directory that was most recently stored by the pushd command.
+
+### Total disk usage
+
+```
+du -sh /path
+```
+
+- du - estimate file space usage
+- s summarize
+- h print sizes in human readable format
+
+### List attached disks
+
+```
+lsblk -pmf
+```
+
+- lsblk - list block devices
+- p Print full device paths
+- m Output info about device owner, group and mode
+- f Output info about filesystems
